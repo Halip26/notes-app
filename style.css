@@ -1,74 +1,135 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.container{
-    min-height: 100vh;
-    width: 100vw;
-    padding: 23px;
-    background-color: #282b35;
+body {
+  background-color: #282b35;
 }
 
-.header-title{
-    display: flex;
-    align-items: center;
-    padding: 10px;
-    background-color: rgb(71, 71, 71);
-    text-align: center;
-    color: rgb(7, 7, 7);
+.container {
+  min-height: 100vh;
+  width: 100vw;
+  padding: 23px;
+  background-color: #282b35;
+  transition: background-color 0.3s;
 }
 
-.header-title :nth-child(1){
-    font-size: 30px;
+.header-title {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: rgb(71, 71, 71);
+  text-align: center;
+  color: rgb(7, 7, 7);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: box-shadow 0.3s;
 }
 
-
-.header-title :nth-child(2){
-    color:#F9BD34;
-    margin-top: 10px;
+.header-title :nth-child(1) {
+  font-size: 30px;
+  transition: color 0.3s;
 }
 
-
-#input-box{
-    border: 1px solid black;
-    padding: 23px;
-}
-#addTitle{
-    font-weight: bolder;
-   }
-input, textarea{
-    width: 100%;
-    background-color: transparent;
-    border: none;
-    outline: none;
-    margin-top: 6px;
-    color: white;
+.header-title :nth-child(2) {
+  color: #f9bd34;
+  margin-top: 10px;
+  transition: color 0.3s;
 }
 
-button{
-    background: transparent;
-    color: white;
-    padding: 8px 12px;
-    border: 1px solid white;
+#input-box {
+  border: 1px solid black;
+  padding: 23px;
+  border-radius: 8px;
+  background: rgba(40, 43, 53, 0.95);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s, border-color 0.3s;
 }
 
-#notes{
-    padding: 23px;
-    display: flex;
-    flex-wrap: wrap;
-}
-.note{
-    width: 300px;
-    color: #a1a0a0;
-    overflow-wrap: break-word;
-    margin: 12px;
-    padding: 12px;
-    border: 1px solid black;
-    background: transparent;
+#addTitle {
+  font-weight: bolder;
 }
 
-.deleteNote{
-    float: right;
+input,
+textarea {
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  margin-top: 6px;
+  color: white;
+  font-size: 1rem;
+  border-bottom: 1px solid #444;
+  padding: 6px 0;
+  transition: border-color 0.3s, background-color 0.3s;
+}
+
+input:focus,
+textarea:focus {
+  border-bottom: 1.5px solid #f9bd34;
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+button {
+  background: transparent;
+  color: white;
+  padding: 8px 16px;
+  border: 1px solid #f9bd34;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  margin-top: 10px;
+  transition: background 0.3s, color 0.3s, border-color 0.3s, box-shadow 0.3s;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+button:hover,
+button:focus {
+  background: #f9bd34;
+  color: #282b35;
+  border-color: #f9bd34;
+  box-shadow: 0 2px 8px rgba(249, 189, 52, 0.15);
+}
+
+#notes {
+  padding: 23px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.note {
+  width: 300px;
+  color: #a1a0a0;
+  overflow-wrap: break-word;
+  margin: 12px 0;
+  padding: 16px;
+  border: 1px solid #444;
+  background: rgba(40, 43, 53, 0.98);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+  transition: box-shadow 0.3s, border-color 0.3s, transform 0.2s;
+}
+
+.note:hover {
+  box-shadow: 0 6px 24px rgba(249, 189, 52, 0.15);
+  border-color: #f9bd34;
+  transform: translateY(-4px) scale(1.03);
+}
+
+.deleteNote {
+  float: right;
+  background: transparent;
+  color: #f9bd34;
+  border: none;
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.deleteNote:hover {
+  color: #ff5252;
 }
